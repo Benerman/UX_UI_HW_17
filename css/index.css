@@ -4,13 +4,34 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-main {
-    /* display: flex; */
+
+#navbar {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #FFF;
+    box-shadow: 0px 8px 0px 0px #276CC9;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#navbar .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    /* margin-left: 50px;
+    margin-right: 50px */
+}
+
+#navbar .navButtons {
+    display: flex;
+    align-items: right;
 }
 
 #logo {
-    float: left;
-    text-align: center;
+    /* float: left; */
+    /* text-align: center; */
     color: #000;
     font-family: 'Silkscreen', sans-serif;
     font-size: 55px;
@@ -19,19 +40,6 @@ main {
     line-height: normal;
     margin: 15px;
     padding: auto;
-}
-
-#navbar {
-    width: 100%;
-    height: 100px;
-    background: #FFF;
-    box-shadow: 0px 8px 0px 0px #276CC9;
-    overflow: hidden;
-}
-
-#navbar .nav {
-    margin-left: 50px;
-    margin-right: 50px
 }
 
 #navbar a {
@@ -56,35 +64,36 @@ main {
 
 .content {
     display: flex;
+    max-width: 1300px;
     justify-content: space-around;
+    margin: 0 auto;
     margin-top: 74px;
     margin-bottom: 74px;
-    display: flex;
-    align-items: center;
     gap: 74px;
     align-items: center;
     flex-wrap: wrap;
     align-content: space-around;
 }
 
+
+
+.hero {
+    padding-top: 45%;
+    height:fit-content;
+    background: url("../media/hero.jpg"), lightgray 50% / cover no-repeat;
+    background-position: center;
+    /* flex-shrink: 0; */
+}
 .frame {
-    max-width: 455px;
-    max-height: 415px;
+    width: 30%;
+    position: relative;
     /* margin: auto; */
     align-items: center;
-    padding: 50px 60px;
+    padding: 6% 7%;
     align-items: center;
     border: 10px solid var(--Edge-Blue, #2E316C);
     background: #FFF;
     box-shadow: 8px 8px 0px 0px #276CC9;
-}
-
-.hero {
-    width: 575px;
-    height: 575px;
-    background: url("../media/hero.jpg"), lightgray 50% / cover no-repeat;
-    background-size: cover;
-    flex-shrink: 0;
 }
 
 .frame p {
@@ -115,12 +124,33 @@ main {
     line-height: normal;
 }
 
+.project .projectTitle {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0, 100, 75%); /* Semi-transparent background */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; /* Add a transition for smooth reveal */
+}
+
+.project:hover .projectTitle{
+    opacity: 1; /* Reveal the overlay on hover */
+}
 
 #footer {
     display: flex;
     width: 100%;
     padding: 26px 221px;
     align-items: flex-start;
+    justify-content: space-around;
     background: #2E316C;
 }
 
@@ -163,4 +193,16 @@ main {
 }
 #footer a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #avbar .navButtons {
+        display: none;
+    }
+    .frame {
+        width: 85%;
+    }
+    .hero {
+        padding-top: 85%;
+    }
 }
