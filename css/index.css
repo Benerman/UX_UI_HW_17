@@ -63,20 +63,21 @@ body {
 }
 
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     max-width: 1300px;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 74px;
     margin-bottom: 74px;
     gap: 74px;
     align-items: center;
-    flex-wrap: wrap;
-    align-content: space-around;
 }
 
 .frame {
-    width: 30%;
+    /* width: 30%; */
+    display: flex;
+    height: 90%;
     position: relative;
     /* margin: auto; */
     padding: 6% 7%;
