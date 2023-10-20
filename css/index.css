@@ -20,8 +20,6 @@ body {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    /* margin-left: 50px;
-    margin-right: 50px */
 }
 
 #navbar .navButtons {
@@ -30,8 +28,6 @@ body {
 }
 
 #logo {
-    /* float: left; */
-    /* text-align: center; */
     color: #000;
     font-family: 'Silkscreen', sans-serif;
     font-size: 55px;
@@ -39,10 +35,13 @@ body {
     font-weight: 400;
     line-height: normal;
     margin: 15px;
-    padding: auto;
 }
 
-#navbar a {
+#home {
+    text-decoration: none;
+}
+
+#navbar .navButtons a {
     float: right;
     text-align: center;
     padding: 12px 25px;
@@ -57,7 +56,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
     
-#navbar a:hover {
+#navbar .navButtons a:hover {
     box-shadow: 3px 3px 0px 0px #276CC9;
     transform: translate(5px, 5px)
 }
@@ -65,7 +64,7 @@ body {
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1300px;
+    max-width: 1200px;
     justify-content: center;
     margin: 0 auto;
     margin-top: 74px;
@@ -74,15 +73,16 @@ body {
     align-items: center;
 }
 
-.frame {
-    /* width: 30%; */
-    display: flex;
-    height: 90%;
-    position: relative;
-    /* margin: auto; */
+.frame, .footerColumn{
     padding: 6% 7%;
     align-items: center;
     justify-content: center;
+}
+.frame {
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    position: relative;
     border: 10px solid var(--Edge-Blue, #2E316C);
     background: #FFF;
     box-shadow: 8px 8px 0px 0px #276CC9;
@@ -117,11 +117,15 @@ body {
 }
 
 .hero {
-    padding-top: 55%;
-    height:fit-content;
-    background: url("../media/hero.jpg"), lightgray 50% / cover no-repeat;
-    background-position: center;
-    flex-shrink: 0;
+    /* padding: 0; */
+    background-color: #9BE9FF;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    object-fit: cover;
 }
 
 .project .projectTitle {
@@ -154,12 +158,19 @@ body {
 }
 
 #footer {
-    display: flex;
     width: 100%;
-    padding: 26px 221px;
-    align-items: flex-start;
-    justify-content: space-around;
+    margin: 0 auto;
     background: #2E316C;
+    align-items: center;
+    justify-content: center;
+}
+.footerRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    align-items: start;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 #footer h2 {
@@ -203,14 +214,47 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width: 900px) {
-    #avbar .navButtons {
+@media (max-width: 700px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    #navbar .navButtons {
         display: none;
     }
     .frame {
-        width: 85%;
+        width: 95%;
+        margin: auto;
     }
-    .hero {
-        padding-top: 85%;
+    .footerRow {
+        grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 1024px) {
+    .content {
+        justify-content: center;
+    }
+    #logo {
+        font-size: 44px;
+    }
+    #navbar .navButtons a {
+        padding: 8px 17px;
+        margin: 10px;
+        font-size: 14px;
+        
+        color: #000;
+        border: 8px solid #2E316C;
+        background: #FFF;
+        box-shadow: 6px 6px 0px 0px #276CC9;
+    }
+    .frame {
+        width: 70%;
+    }
+    .frame p {
+        font-size: 18px;
+    }
+    .frame h1 {
+        font-size: 32px;
+    }
+    
 }
